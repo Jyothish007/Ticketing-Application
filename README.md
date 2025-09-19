@@ -70,17 +70,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 
 ---
 
-## Project Structure
-
-- `pages/` - Contains Next.js pages for routing
-- `components/` - React components
-- `lib/` - Utility functions and database connection
-- `models/` - Mongoose schemas for MongoDB
-- `public/` - Static assets
-- `styles/` - Tailwind CSS styles
-
----
-
 ## Future Enhancements
 
 - User authentication and multi-user support
