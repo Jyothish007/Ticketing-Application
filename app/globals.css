@@ -1,26 +1,47 @@
 @import "tailwindcss";
+/* Apply global background colors or text styles */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-nav: #18222f;
+  --color-page: #2b3441;
+  --color-card: #47566a;
+  --color-default-text: #f1f3f5;
+  --color-card-hover: #4f5e74;
+  --color-blue-accent: #0084d4;
+  --color-blue-accent-hover: #009fff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer components {
+  .icon {
+    @apply text-default-text text-xl; /* Tailwind classes for color and size */
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .btn {
+    @apply hover:no-underline bg-blue-accent hover:bg-blue-accent-hover tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* @layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-1xl;
+  }
+  p {
+    @apply text-sm text-default-text;
+  }
+} */
