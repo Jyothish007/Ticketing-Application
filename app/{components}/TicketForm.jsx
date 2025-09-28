@@ -1,10 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const TicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
   const router = useRouter();
+  const { data: session } = useSession();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -32,18 +34,21 @@ const TicketForm = ({ ticket }) => {
         throw new Error("Failed to update ticket");
       }
     } else {
+      const userEmail = session?.user.email;
+
       const res = await fetch("/api/Tickets", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, userEmail }), // attach userId here
       });
 
       if (!res.ok) {
         throw new Error("Failed to create ticket");
       }
     }
+
     router.refresh();
     router.push("/");
   };
@@ -189,7 +194,7 @@ const TicketForm = ({ ticket }) => {
         <input
           type="submit"
           value={EDITMODE ? "Update Ticket" : "Create Ticket"}
-          className="btn"
+          className="bg-blue-600"
         />
       </form>
     </div>
