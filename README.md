@@ -72,7 +72,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 
 ## Future Enhancements
 
-- User authentication and multi-user support
+- User authentication and multi-user support [Done]
 - Ticket assignment and role management
 - Commenting and activity logs
 - Email notifications
