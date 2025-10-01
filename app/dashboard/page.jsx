@@ -1,8 +1,7 @@
-// app/Dashboard/page.jsx (or wherever this is)
-import Nav from "../{components}/Nav";
-import TicketCard from "../{components}/TicketCard";
-import { getServerSession } from "next-auth"; // 👈 import this
-import { authOptions } from "../api/auth/[...nextauth]/route"; // 👈 adjust path if needed
+import Nav from "../components/Nav";
+import TicketCard from "../components/TicketCard";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 const getTickets = async (userEmail) => {
   try {

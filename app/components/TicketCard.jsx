@@ -19,7 +19,7 @@ const TicketCard = ({ ticket }) => {
   };
 
   return (
-    <div className="flex flex-col bg-card hover:bg-card-hover rounded-lg shadow-lg p-4 m-2">
+    <div className="flex flex-col bg-gray-100 rounded-lg shadow-lg p-4 m-2 transition-transform duration-200 hover:scale-102 hover:shadow-xl cursor-pointer">
       <div className="flex mb-2">
         <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
@@ -40,7 +40,7 @@ const TicketCard = ({ ticket }) => {
             </p>
             <ProgressDisplay progress={ticket.progress} />
           </div>
-          <div className="ml-auto flex  items-end">
+          <div className="ml-auto flex items-end">
             <StatusDisplay status={ticket.status} />
           </div>
         </div>

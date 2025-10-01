@@ -1,7 +1,7 @@
 @import "tailwindcss";
 /* Apply global background colors or text styles */
 
-@theme {
+/* @theme {
   --color-nav: #18222f;
   --color-page: #2b3441;
   --color-card: #47566a;
@@ -9,18 +9,18 @@
   --color-card-hover: #4f5e74;
   --color-blue-accent: #0084d4;
   --color-blue-accent-hover: #009fff;
-}
+} */
 
-@layer components {
+/* @layer components {
   .icon {
-    @apply text-default-text text-xl; /* Tailwind classes for color and size */
+    @apply text-default-text text-xl;
   }
 
   .btn {
     @apply hover:no-underline bg-blue-accent hover:bg-blue-accent-hover tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block;
   }
-}
+} */
 
-input {
+/* input {
   @apply w-[400px] border border-gray-200 py-2 px-6 bg-nav;
-}
+} */

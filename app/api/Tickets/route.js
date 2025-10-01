@@ -1,6 +1,6 @@
-import Ticket from "../../{models}/Ticket";
+import Ticket from "../../models/Ticket";
 import { NextResponse } from "next/server";
-import User from "../../{models}/User";
+import User from "../../models/User";
 
 export async function POST(req) {
   try {
