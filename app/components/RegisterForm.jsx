@@ -128,11 +128,6 @@ export default function RegisterForm() {
           </div>
         </form>
       </div>
-      <style jsx>{`
-        .loader {
-          border-top-color: transparent;
-        }
-      `}</style>
     </div>
   );
 }

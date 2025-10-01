@@ -21,6 +21,7 @@ const TicketForm = ({ ticket }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (EDITMODE) {
       const res = await fetch(`/api/Tickets/${ticket._id}`, {
@@ -43,6 +44,7 @@ const TicketForm = ({ ticket }) => {
         body: JSON.stringify({ ...formData, userEmail }),
       });
       if (!res.ok) {
+        setIsLoading(false);
         throw new Error("Failed to create ticket");
       }
     }
@@ -69,6 +71,7 @@ const TicketForm = ({ ticket }) => {
   }
 
   const [formData, setFormData] = useState(startingTicketData);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div>
@@ -185,9 +188,15 @@ const TicketForm = ({ ticket }) => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded transition duration-200"
+              disabled={isLoading}
+              className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded transition duration-200 flex items-center justify-center ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              {EDITMODE ? "Update Ticket" : "Create Ticket"}
+              {isLoading ? (
+                <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-5 w-5 mr-2 border-t-green-500 animate-spin"></div>
+              ) : null}
+              <span>{EDITMODE ? "Update Ticket" : "Create Ticket"}</span>
             </button>
           </div>
         </form>

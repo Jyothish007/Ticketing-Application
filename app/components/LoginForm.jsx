@@ -102,12 +102,6 @@ export default function LoginForm() {
           </div>
         </form>
       </div>
-      {/* Optional: add CSS for loader (if needed) */}
-      <style jsx>{`
-        .loader {
-          border-top-color: transparent;
-        }
-      `}</style>
     </div>
   );
 }
